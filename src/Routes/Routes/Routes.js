@@ -4,6 +4,7 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import Blog from "../../Pages/Home/Blog/Blog";
 import Error from "../../Pages/Home/Error/Error";
 import Home from "../../Pages/Home/Home/Home";
+import Service from "../../Pages/Home/Home/Service/Service";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Pages/Sign-up/Signup";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -48,6 +49,13 @@ const router = createBrowserRouter([
 
                 path: '/dashboard',
                 element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+
+
+            },
+            {
+
+                path: '/service',
+                element: <PrivateRoute><Service></Service></PrivateRoute>,
 
 
             },
