@@ -8,7 +8,7 @@ const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
 
-        fetch('http://localhost:5000/categoryCollection')
+        fetch('http://localhost:5000/serviceCollection')
             .then(res => res.json())
             .then(data => setServices(data))
 
