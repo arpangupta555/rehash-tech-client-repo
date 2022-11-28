@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeCategories = (service) => {
+    console.log(service.service)
 
 
     return (
@@ -9,9 +11,9 @@ const HomeCategories = (service) => {
             <div className="flex flex-col justify-between p-6 space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-3xl font-semibold tracking-wide">{service.service.title}</h2>
-                    <p className="dark:text-gray-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+                    <p className="dark:text-black-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
                 </div>
-                <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900">Read more</button>
+                <Link to={`/category/${service.service._id}`}><button className="btn btn-primary">Details</button></Link>
             </div>
         </div >
     );
