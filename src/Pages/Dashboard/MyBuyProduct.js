@@ -31,21 +31,26 @@ const MyBuyProduct = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
+                            <th>Buyer Name</th>
                             <th>Product Name</th>
+                            <th>Seller Name</th>
                             <th>Price</th>
                             <th>Meeting Location</th>
+                            <th>Phone No</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            buyProduct.map((sigProduct, i) => <tr>
+                            buyProduct.map((sigProduct, i) => <tr key={sigProduct._id}>
                                 <th>{i + 1}</th>
-                                <td>Name</td>
-                                <td>Product Name</td>
-                                <td>Price</td>
-                                <td>Meeting Location</td>
+                                <td>{sigProduct.buyerName}</td>
+                                <td>{sigProduct.productName}</td>
+                                <td>{sigProduct.sellersName}</td>
+                                <td>{sigProduct.price} tk</td>
+                                <td>{sigProduct.location}</td>
+                                <td>{sigProduct.phoneNo}</td>
+
 
                             </tr>)
                         }

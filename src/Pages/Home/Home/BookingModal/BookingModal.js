@@ -5,7 +5,7 @@ import { AuthContext } from '../../../../Context/AuthProvider';
 const BookingModal = ({ modproducts, setModProducts }) => {
 
 
-    const { product_name, resale_price } = modproducts;
+    const { product_name, resale_price, sellers_name } = modproducts;
     const { user } = useContext(AuthContext)
 
     const handleBuy = event => {
@@ -13,14 +13,18 @@ const BookingModal = ({ modproducts, setModProducts }) => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
+        const price = form.price.value;
         const productName = form.productName.value;
+        const sellersName = form.sellersName.value;
         const phone = form.phone.value;
         const location = form.location.value;
 
         const booking = {
-            sellerName: name,
+            buyerName: name,
             email: email,
             productName: productName,
+            price: price,
+            sellersName: sellersName,
             phoneNo: phone,
             location: location,
 
@@ -63,6 +67,7 @@ const BookingModal = ({ modproducts, setModProducts }) => {
                     <form onSubmit={handleBuy}>
                         <input name="name" defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input mb-2 w-full input-bordered" required />
                         <input name="email" defaultValue={user?.email} disabled type="email" placeholder="Email Address" className="input mb-2 w-full input-bordered" required />
+                        <input name="sellersName" defaultValue={sellers_name} disabled type="email" placeholder="seller Name" className="input mb-2 w-full input-bordered" required />
                         <input name="productName" defaultValue={product_name} disabled type="text" placeholder="Item-name" className="input mb-2 w-full input-bordered" />
                         <input name="price" defaultValue={resale_price} disabled type="text" placeholder="Price" className="input mb-2 w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input mb-2 w-full input-bordered" required />
