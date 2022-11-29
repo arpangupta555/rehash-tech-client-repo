@@ -7,7 +7,7 @@ const Service = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
 
-        fetch('http://localhost:5000/productCollection')
+        fetch('http://localhost:5000/buyProduct')
             .then(res => res.json())
             .then(data => setProducts(data))
 
