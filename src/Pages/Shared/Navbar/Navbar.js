@@ -14,10 +14,11 @@ const Navbar = () => {
 
     const menuItems = <>
         <li> <Link to='/'> Home </Link> </li>
-        <li> <Link to='/service'> Service </Link> </li>
-        <li> <Link to='/review'> My Review </Link> </li>
+
+
         {user?.uid ?
             <>
+                <li> <Link to='/service'> My Product </Link> </li>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><button onClick={handleLogOut}>Sign out</button></li>
             </>
