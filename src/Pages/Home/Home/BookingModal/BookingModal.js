@@ -42,7 +42,9 @@ const BookingModal = ({ modproducts, setModProducts }) => {
                     setModProducts(null);
                     toast.success('Product Confirmed')
                 }
-
+                else {
+                    toast.error(data.message);
+                }
             })
 
 
