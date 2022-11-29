@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import HomeCategories from './HomeCategories';
@@ -5,16 +6,22 @@ import HomeCategories from './HomeCategories';
 const Home = () => {
 
 
-    const [services, setServices] = useState([]);
-    useEffect(() => {
+    // const [services, setServices] = useState([]);
 
-        fetch('http://localhost:5000/serviceCollection')
-            .then(res => res.json())
-            .then(data => setServices(data))
+    const { data: services = [] } = useQuery({
+
+        queryKey: ['serviceCollection'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/serviceCollection');
+            const data = await res.json();
+            return data
+        }
+
+    })
 
 
 
-    }, [])
+
 
 
 
