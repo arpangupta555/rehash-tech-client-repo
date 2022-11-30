@@ -36,7 +36,7 @@ const AddProduct = () => {
 
                     }
 
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://rehash-tech-server.vercel.app/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

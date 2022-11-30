@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 const MyBuyProduct = () => {
 
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/buyProducts?email=${user.email}`
+    const url = `https://rehash-tech-server.vercel.app/buyProducts?email=${user.email}`
 
     const { data: buyProduct = [] } = useQuery({
 

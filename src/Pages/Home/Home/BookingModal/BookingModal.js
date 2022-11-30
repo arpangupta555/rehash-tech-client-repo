@@ -33,7 +33,7 @@ const BookingModal = ({ modproducts, setModProducts }) => {
 
         console.log(booking)
 
-        fetch('http://localhost:5000/buyProducts', {
+        fetch('https://rehash-tech-server.vercel.app/buyProducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ const useBuyers = email => {
     const [isBuyerLoading, setIsBuyerLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/buyer/${email}`)
+            fetch(`https://rehash-tech-server.vercel.app/users/buyer/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

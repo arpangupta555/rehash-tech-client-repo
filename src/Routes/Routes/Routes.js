@@ -57,7 +57,7 @@ const router = createBrowserRouter([
 
                 path: '/category/:id',
                 element: <PrivateRoute><Product></Product></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://rehash-tech-server.vercel.app/category/${params.id}`)
 
             },
             {

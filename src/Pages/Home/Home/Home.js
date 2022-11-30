@@ -12,7 +12,7 @@ const Home = () => {
 
         queryKey: ['serviceCollection'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/serviceCollection');
+            const res = await fetch('https://rehash-tech-server.vercel.app/serviceCollection');
             const data = await res.json();
             return data
         }
