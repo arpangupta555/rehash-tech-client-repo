@@ -4,11 +4,13 @@ import { AuthContext } from '../Context/AuthProvider';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import useAdmin from '../useToken/useAdmin';
 import useBuyers from '../useToken/useBuyers';
+import useSeller from '../useToken/useSeller';
 
 const DashboardLayout = () => {
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
     const [isBuyer] = useBuyers(user?.email)
+    const [isSeller] = useSeller(user?.email)
     return (
         <div>
             <Navbar></Navbar>
@@ -25,10 +27,29 @@ const DashboardLayout = () => {
 
                         {isBuyer &&
                             < li > <Link to="/dashboard">My Orders</Link></li>}
+                        {isBuyer &&
+                            < li > <Link to="/dashboard">My WishList</Link></li>}
+
 
                         {isAdmin &&
                             <li><Link to="/dashboard/allusers">All Users</Link></li>
-                        }</ul>
+
+
+                        }
+                        {isAdmin &&
+                            <li><Link to="/dashboard/allusers">All Seller</Link></li>
+
+
+                        }
+                        {isSeller &&
+                            <li><Link to="/dashboard/allOrder">All Order</Link></li>
+
+
+                        }
+
+
+
+                    </ul>
 
                 </div>
             </div>

@@ -29,6 +29,7 @@ const AddProduct = () => {
                         sellers_name: data.sellerName,
                         location: data.location,
                         original_price: data.orprice,
+                        condition: data.condition,
                         resale_price: data.reprice,
                         years_of_use: data.year,
                         time: data.time
@@ -47,7 +48,7 @@ const AddProduct = () => {
                         .then(result => {
                             console.log(result);
                             toast.success(`${data.name} is added successfully`);
-                            // navigate('/dashboard/managedoctors')
+
                         })
 
 
@@ -72,6 +73,19 @@ const AddProduct = () => {
                         <input type="text" {...register("sellerName", {
                             required: "Name is Required"
                         })} className="input input-bordered w-full max-w-xs" />
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label"> <span className="label-text">Select Condition</span></label>
+                            <select {...register("condition", {
+                                required: true
+                            })} className="select select-bordered w-full max-w-xs">
+
+
+                                <option >Excellent</option>
+                                <option >Good</option>
+                                <option >Fair</option>
+                            </select>
+                        </div>
 
                     </div>
                     <div className="form-control w-full max-w-xs">

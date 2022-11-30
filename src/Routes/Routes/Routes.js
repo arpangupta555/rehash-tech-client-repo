@@ -52,13 +52,7 @@ const router = createBrowserRouter([
 
             },
 
-            {
 
-                path: '/service',
-                element: <PrivateRoute><Service></Service></PrivateRoute>,
-
-
-            },
             {
 
                 path: '/category/:id',
@@ -95,7 +89,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allusers',
                 element: <AdminRoute><Allusers></Allusers></AdminRoute>
-            }
+            },
+            {
+
+                path: '/dashboard/allOrder',
+                element: <PrivateRoute><Service></Service></PrivateRoute>,
+
+
+            },
 
         ]
 

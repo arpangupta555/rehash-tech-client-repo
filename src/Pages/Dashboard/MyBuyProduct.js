@@ -43,6 +43,7 @@ const MyBuyProduct = () => {
                             <th>Price</th>
                             <th>Meeting Location</th>
                             <th>Phone No</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +68,7 @@ const MyBuyProduct = () => {
                                 <td>{sigProduct.location}</td>
                                 <td>{sigProduct.phoneNo}</td>
 
-
+                                <td><button className='btn btn-xs btn-warning'>Pay</button></td>
                             </tr>)
                         }
 

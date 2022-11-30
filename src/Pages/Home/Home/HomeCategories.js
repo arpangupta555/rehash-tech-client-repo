@@ -13,9 +13,9 @@ const HomeCategories = (service) => {
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-semibold tracking-wide">{service.service.title}</h2>
-                        <p className="dark:text-black-100">Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.</p>
+                        <p className="dark:text-black-100">Get the best deals on new and used {service.service.title} mobiles phones and accessories for sale in Bangladesh only on Bikroy.com</p>
                     </div>
-                    <button>Details</button>
+
                 </div>
             </Link>
         </div >

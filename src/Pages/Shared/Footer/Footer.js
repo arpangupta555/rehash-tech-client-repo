@@ -6,7 +6,7 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <p className='text-5xl'>Rehash-<span className='text-amber-500'>Tech</span> </p>
-                    <p>All rights received by pixelpixim.<br />Providing reliable shot since 2017</p>
+                    <p>All rights received by Rehash.<br />Providing reliable shot since 2017</p>
                 </div>
                 <div>
                     <span className="footer-title">Services</span>

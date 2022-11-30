@@ -46,6 +46,7 @@ const Allusers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Verified</th>
+                            <th>Delete</th>
 
                         </tr>
                     </thead>
@@ -56,7 +57,7 @@ const Allusers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Verified</button>}</td>
-
+                                <td><button className='btn btn-xs btn-warning'>Delete</button></td>
                             </tr>)
                         }
 
