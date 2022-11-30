@@ -19,7 +19,7 @@ const SignUp = () => {
 
     const handleSignUp = (data) => {
         setSignUPError('');
-        createUser(data.email, data.password)
+        createUser(data.email, data.password, data.role)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -29,7 +29,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
             })
@@ -40,8 +40,8 @@ const SignUp = () => {
     }
 
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -88,6 +88,17 @@ const SignUp = () => {
                             pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="label-text">Select Category</span></label>
+                        <select {...register("role", {
+                            required: true
+                        })} className="select select-bordered w-full max-w-xs">
+
+                            <option >Seller</option>
+                            <option >Buyer</option>
+
+                        </select>
                     </div>
                     <input className='btn btn-accent w-full mt-4' value="Sign Up" type="submit" />
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
