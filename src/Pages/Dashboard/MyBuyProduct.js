@@ -12,13 +12,18 @@ const MyBuyProduct = () => {
 
         queryKey: ['buyProduct', user?.email],
         queryFn: async () => {
-            const res = await fetch(url);
+            const res = await fetch(url, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = await res.json();
             return data;
         }
 
 
     })
+
 
 
 
@@ -31,6 +36,7 @@ const MyBuyProduct = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>Product image</th>
                             <th>Buyer Name</th>
                             <th>Product Name</th>
                             <th>Seller Name</th>
@@ -44,6 +50,16 @@ const MyBuyProduct = () => {
                         {
                             buyProduct.map((sigProduct, i) => <tr key={sigProduct._id}>
                                 <th>{i + 1}</th>
+                                <td>
+
+
+                                    <div className="avatar">
+                                        <div className="w-32 rounded">
+                                            <img src={sigProduct.picture} alt='' />
+                                        </div>
+                                    </div>
+
+                                </td>
                                 <td>{sigProduct.buyerName}</td>
                                 <td>{sigProduct.productName}</td>
                                 <td>{sigProduct.sellersName}</td>
