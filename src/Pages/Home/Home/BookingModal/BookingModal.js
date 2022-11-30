@@ -46,7 +46,7 @@ const BookingModal = ({ modproducts, setModProducts }) => {
                 console.log(data);
                 if (data.acknowledged) {
                     setModProducts(null);
-                    toast.success('Product Confirmed')
+                    toast.success('Product Booked')
                 }
                 else {
                     toast.error(data.message);
