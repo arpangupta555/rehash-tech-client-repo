@@ -28,7 +28,7 @@ const Allusers = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    toast.success('Make admin successful.')
+                    toast.success('Verified successfully.')
                     refetch();
                 }
 
@@ -36,7 +36,7 @@ const Allusers = () => {
     }
     return (
         <div>
-            <h1>Hi </h1>
+
             <h2 className="text-3xl">All Users</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -45,8 +45,8 @@ const Allusers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Admin</th>
-                            <th>Delete</th>
+                            <th>Verified</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -55,8 +55,8 @@ const Allusers = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
-                                <td><button className='btn btn-xs btn-danger'>Delete</button></td>
+                                <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Verified</button>}</td>
+
                             </tr>)
                         }
 
